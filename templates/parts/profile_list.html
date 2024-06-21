@@ -1,0 +1,14 @@
+{% load static %}
+<div class="user-list-mob" style="display: none">
+  <div class="nav-blocker-user"></div>
+  <div class="nav-content-user">
+    <a style="display: flex; justify-content: left" href="index.html"
+      ><img class="logo" src="{% static 'images/IC/logo.webp' %}" alt=""
+    /></a>
+    <ul id="dropdown-profile" class="dropdown-user-mob">
+      <li><a href="https://pay.getpayin.com/guest/jolie%20ville%20luxor/660bb826140f4/invoices/create" target="_blank">Payment</a></li>
+      <li><a href="{% url 'checkin_view' %}">Check-in</a></li>
+      <li><a href="{% url 'logout' %}">Logout</a></li>
+    </ul>
+  </div>
+</div>

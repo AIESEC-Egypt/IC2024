@@ -1,0 +1,124 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+<main>
+<div class="background-pattern" style="    background-repeat: repeat-y;">
+  <section class="register_hero container" style="height: 50vh;">
+      <div class="reg-hero-content">
+        <h1 style="color: white; ">Shopping Cart</h1>
+      </div>
+      
+      <!-- <picture style="width: 100%;">
+        <source media="(max-width: 786px)" srcset="{% static 'images/IC/Mobile Banner.webp' %}" />
+        <source media="(min-width: 787px)" srcset="{% static 'images/IC/registration_website.webp' %}" />
+        <img src="{% static 'images/IC/registration_website.webp' %}" alt="" width="100%"/>
+
+      </picture> -->
+    </section>
+  </div>
+  <div class="background-pattern" style="    background-repeat: repeat-y;">
+    <section class="merchandise">
+        <div class="container" style="    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 60px;
+        padding-top: 0;
+
+">
+          <div class="cart-grid">
+            {% if cart_products|length == 0 %}
+              <p style='    font-family: "Caliburn";
+    font-size: 32px;'>No Iteams...</p>
+            {% endif %}
+            {% for item in cart_products %}
+                <div class="cart-item">
+                  <img src="{{ item.image }}" alt="">
+                  <div class="item-content">
+                    <p>{{ item.name }}</p>
+                    <p>{{ item.price }}</p>
+                    {% if item.product_type == None %}
+                    <div class="quantity-container">
+                      <p>Quantity: </p>
+                      {% for key, value in quantities.items %}
+                        {% if key == item.id|slugify %}
+                          <input type="number" id="qty-cart" name="quantity" min="1" max="100" value="{{ value }}">
+                        {% endif %}
+                      {% endfor %}
+                    </div>
+                    {% endif %}
+                    
+                    <div class="summary-button">
+                      {% if item.product_type == None %}
+                      <button type="button" data-index="{{item.id}}" class="update-product">Update</button>
+                      {% endif %}
+                      <button type="button" data-index="{{item.id}}" class="delete-product" style="    background: red;">Delete</button>
+                    </div>
+                  </div>
+                </div>
+            {% endfor %}
+          </div>
+          <div class="checkout">
+            <div class="cart-total"><p>Total: ${{ totals }}</p></div>
+            <a href="{% url 'place_order' %}">Place Order</a>
+          </div>
+        </div>
+    </section>
+  </div>
+</main>
+<script
+  src="https://code.jquery.com/jquery-3.7.1.min.js"
+  integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+  crossorigin="anonymous"></script>
+  <script>
+    $(document).on('click', '.delete-product', function(e){
+      e.preventDefault();
+      $.ajax({
+        type: 'POST',
+        url: "{% url 'cart_delete' %}",
+        data: {
+          product_id: $(this).data('index'),
+          csrfmiddlewaretoken: '{{ csrf_token }}',
+          action: 'post',
+        },
+        success: function(json){
+          // console.log(json);
+          // console.log(json.qty);
+          // document.getElementById("cart_quantity").textContent = json.qty
+          location.reload()
+        },
+        error: function(xhr, errmsg, err){
+          console.log(errmsg)
+          console.log(err)
+        }
+      })
+    })
+
+    $(document).on('click', '.update-product', function(e){
+      e.preventDefault();
+       var quantityInput = $(this).closest('.cart-item').find('input[name="quantity"]');
+      console.log(quantityInput.val())
+      $.ajax({
+        type: 'POST',
+        url: "{% url 'cart_update' %}",
+        data: {
+          product_id: $(this).data('index'),
+          product_qty: quantityInput.val(),
+          csrfmiddlewaretoken: '{{ csrf_token }}',
+          action: 'post',
+        },
+        success: function(json){
+          // console.log(json);
+          // console.log(json.qty);
+          // document.getElementById("cart_quantity").textContent = json.qty
+          location.reload()
+        },
+        error: function(xhr, errmsg, err){
+          console.log(errmsg)
+          console.log(err)
+        }
+      })
+    })
+  </script>
+{% endblock %}

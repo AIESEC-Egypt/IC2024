@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+<main>
+  <div class="background-pattern">
+    <section class="reg-thankyou">
+        <div class="container" style="    display: flex;
+    flex-direction: column;
+    align-items: center;">
+          <h1>Thank You</h1>
+          <p>Your will recieve a mail within a couple of days for the next step</p>
+          <a href="{% url 'index' %}">Home</a>
+        </div>
+    </section>
+  </div>
+</main>
+
+{% endblock %}
+
+

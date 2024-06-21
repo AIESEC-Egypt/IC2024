@@ -1,0 +1,71 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+<main>
+
+  <section class="register_hero">
+      <picture>
+          <source media="(max-width: 767px)" srcset="{% static 'images/IC/tours/Mobile-Banner-tours.webp' %}" />
+          <source media="(min-width: 787px)" srcset="{% static 'images/IC/tours/Landscapee.webp' %}" />
+          <img src="{% static 'images/IC/tours/Landscapee.webp' %}" alt="" width="100%"/>
+        </picture>
+    </section>
+
+  <div class="background-pattern" style="    background-repeat: repeat-y;">
+    <section class="merchandise">
+        <div class="container" style="display: flex; flex-direction: column; align-items: center;">
+          <div class="merch-grid">
+            {% for item in products %}
+               <div class="merch-item">
+                  <img src="{{ item.image }}" alt="">
+                  <div class="item-content">
+                    <p>{{ item.name }}</p>
+                    <p style="font-family: unset; color: white; font-size: 18px;">{{ item.description }}</p>
+                    {% if user.is_authenticated %}
+                      <div class="quantity-container">
+                        <p>€{{ item.price }}</p>
+                      </div>
+                      <button type="button" value="{{ item.id }}" id="add-cart">Add to cart</button>
+                    {% endif %}
+                  </div>
+                </div>
+            {% endfor %}
+          </div>
+        </div>
+    </section>
+  </div>
+</main>
+<script
+  src="https://code.jquery.com/jquery-3.7.1.min.js"
+  integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+  crossorigin="anonymous"></script>
+  <script>
+    $(document).on('click', '#add-cart', function(e){
+      e.preventDefault();
+       var quantityInput = $(this).closest('.merch-item').find('input[name="quantity"]');
+      $.ajax({
+        type: 'POST',
+        url: "{% url 'cart_add' %}",
+        data: {
+          product_id: $(this).val(),
+          product_qty: 1,
+          csrfmiddlewaretoken: '{{ csrf_token }}',
+          action: 'post',
+        },
+        success: function(json){
+          console.log(json);
+          console.log(json.qty);
+          document.getElementById("cart_quantity").textContent = json.qty
+        },
+        error: function(xhr, errmsg, err){
+          console.log(errmsg)
+          console.log(err)
+        }
+      })
+    })
+  </script>
+{% endblock %}
+
+

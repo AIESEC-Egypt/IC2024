@@ -1,0 +1,15 @@
+{% load static %}
+
+<footer class="foter container" style="padding-top: 12px !important">
+  <p>2024 © Courtesy
+                of<a href="https://www.facebook.com/membercommitteegypt" target="_blank"> AIESEC in EGYPT </a><br>Developed by, <a href="https://www.linkedin.com/in/omar-rwiheb-698a761b9" target="_blank"> Omar Rwiheb</a></p>
+  
+  
+  <img src="{% static 'images/IC/footer_image.webp' %}" alt="" />
+</footer>
+<script>
+  let thankyou = document.querySelector('.reg-thankyou');
+  let ftr = document.querySelector('.foter');
+  console.log(ftr.offsetHeight)
+  thankyou.style.height = `calc(100vh - ${ftr.offsetHeight}px - 80px)`
+</script>

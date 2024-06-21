@@ -1,0 +1,804 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+<main>
+  <a href="{% url 'register_view' %}" id="reg-now-btn" class="register-now-btn"> <div><p>Register Now</p></div></a>
+   <div class="shade"></div>
+  <section class="hero" id="hero_sec">
+      <div class="vignette hide"></div>
+      <picture>
+        <source media="(max-width: 767px)" srcset="{% static 'images/IC/Hero/mobile/sky_mod.webp' %}" />
+        <source media="(min-width: 787px)" srcset="{% static 'images/IC/Hero/sky.webp' %}" />
+        <img src="{% static 'images/IC/Hero/sky.webp' %}" alt="sky" data-speedx="0.4" data-speedy="0.28" data-distance="-200" alt="" class="parallax bg-img"/>
+      </picture>
+      <picture>
+        <source media="(max-width: 767px)" srcset="{% static 'images/IC/Hero/mobile/text.webp' %}" />
+        <source media="(min-width: 787px)" srcset="{% static 'images/IC/Hero/text.webp' %}" />
+        <img src="{% static 'images/IC/Hero/text.webp' %}" alt="sky" data-speedx="0.3" data-speedy="0.2" data-distance="500" alt="" class="parallax text"/>
+      </picture>
+      <picture>
+        <source media="(max-width: 767px)" srcset="{% static 'images/IC/Hero/mobile/Layer1.webp' %}" />
+        <source media="(min-width: 787px)" srcset="{% static 'images/IC/Hero/Layer1.webp' %}" />
+        <img src="{% static 'images/IC/Hero/Layer1.webp' %}" alt="sky" data-speedx="0.1" data-speedy="0.12" data-distance="1000" alt="" class="parallax layer1"/>
+      </picture>
+      <picture>
+        <source media="(max-width: 767px)" srcset="{% static 'images/IC/Hero/mobile/layer2.webp' %}" />
+        <source media="(min-width: 787px)" srcset="{% static 'images/IC/Hero/layer2.webp' %}" />
+        <img src="{% static 'images/IC/Hero/layer2.webp' %}" alt="sky" data-speedx="0.2" data-speedy="0.08" data-distance="1200" alt="" class="parallax layer2"/>
+      </picture>
+    </section>
+  <div class="background-pattern">
+    <section class="about" data-aos="fade-up" data-aos-duration="3000">
+      <div class="container">
+        <h2>What's IC</h2>
+        <div class="paragraphs">
+          <p>
+            <span>International Congress</span> is a creation of a global
+            plenary, that would witness 400+ young professionals hailing
+            from 100+ countries along with business leaders, entrepreneurs
+            to enunciate the idea of peace and fulfilment of humankind's
+            potential.
+          </p>
+          <p>
+            This conference marks the importance of leadership and cross
+            cultural development by getting the entire world under one roof.
+            <span>AIESEC in Egypt</span> is proud to host the International
+            Congress and is awaiting your presence in the same.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="numbers">
+      <div class="container">
+        <div class="numbers-bar">
+          <img src="{% static 'images/IC/bar.webp' %}" alt="" />
+        </div>
+        <div class="analysis">
+          <div class="analysis-group">
+            <div class="counter-one__inner">
+              <ul class="list-unstyled counter-one__list">
+                <li class="counter-one__single">
+                  <img src="{% static 'images/IC/icons/icon1.webp' %}" alt="" />
+                  <div class="counter-one__count-box">
+                    <h3 id="count1">00</h3>
+                    <span class="counter-one__letter">+</span>
+                  </div>
+                  <p class="counter-one__text">Delegates</p>
+                </li>
+                <li class="counter-one__single">
+                  <img src="{% static 'images/IC/icons/icon2.webp' %}" alt="" />
+                  <div class="counter-one__count-box">
+                    <h3 id="count2">00</h3>
+                    <span class="counter-one__letter">+</span>
+                  </div>
+                  <p class="counter-one__text">Alumni</p>
+                </li>
+                <li class="counter-one__single">
+                  <img src="{% static 'images/IC/icons/icon3.webp' %}" alt="" />
+                  <div class="counter-one__count-box">
+                    <h3 id="count3">00</h3>
+                  </div>
+                  <p class="counter-one__text">Speakers</p>
+                </li>
+                <li class="counter-one__single">
+                  <img src="{% static 'images/IC/icons/icon4.webp' %}" alt="" />
+                  <div class="counter-one__count-box">
+                    <h3 id="count4">00</h3>
+                  </div>
+                  <p class="counter-one__text">Years of <br />Leadership</p>
+                </li>
+                <li class="counter-one__single">
+                  <img src="{% static 'images/IC/icons/icon5.webp' %} " alt="" />
+                  <div class="counter-one__count-box">
+                    <h3 id="count5">00</h3>
+                  </div>
+                  <p class="counter-one__text">Days</p>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <section class="video" id="analysis">
+    <img src="{% static 'images/IC/background_video1.webp' %} " alt="" />
+    <div class="egypt-video container">
+      <div class="video-wrapper">
+        <button
+          class="fas fa-play play-btn"
+          id="myButton"
+          onclick="Play()"
+        ></button>
+        <video
+          id="video"
+          class="home-video"
+          poster="{% static 'images/IC/Artboard 9 (1).webp' %} "
+        >
+          <source id="mp4" type="video/mp4" />
+        </video>
+        <!-- <div class="video_bg">
+          <img src="{% static 'images/IC/video_back1.webp' %} " alt="" />
+        </div> -->
+      </div>
+    </div>
+  </section>
+
+  <div class="background-pattern">
+     <section class="egypt" data-aos="fade-up" data-aos-duration="3000" style="    margin-top: 120px;">
+        <div class="container">
+          <h2>Egypt!</h2>
+          <p>
+          One of the oldest civilization on this planet and the land of pharos and prestigious
+          history. 
+          </p>
+          <br>
+          <p>When we hear the word Egypt, the first thing that comes to our mind is pyramids. But
+Egypt has much more beyond the pyramids, every corner of Egypt is full of surprises,
+cultures and traditions. <br> <br>
+We are waiting to welcome you to our beautiful homeland, to live all the diverse experiences,
+taste the delicious Egyptian and Middle Eastern cuisine, see our great history, and lost in your
+teenagehood again in our amazing nightlife.
+          </p>
+          <br>
+          <p style="    margin-bottom: 44px;">Keep some space in your bags because when you leave not only hearts will be heavy but
+your bags also, with a lot of Egyptian handicrafts and gifts for your loved ones which will
+remind you about the beautiful memories of Egypt until you visit for the next time.
+          </p>
+          <a href="{% url 'egypt' %}"> Learn More</a>
+        </div>
+    </section>
+  </div>
+
+  <div class="background-pattern">
+    <section
+      class="about"
+      data-aos="fade-up"
+      data-aos-duration="3000"
+      style="margin-top: 50px; margin-bottom: 0"
+    >
+      <div class="container">
+        <h2>You'll Experience</h2>
+        <div class="events-logo">
+          <img
+            src="{% static 'images/IC/logos/Artboard 13.webp' %} "
+            alt=""
+            class="event-logo"
+          />
+          <img
+            src="{% static 'images/IC/logos/Artboard 14.webp' %} "
+            alt=""
+            class="event-logo"
+          />
+          <img
+            src="{% static 'images/IC/logos/Artboard 15.webp' %} "
+            alt=""
+            class="event-logo"
+          />
+          <img
+            src="{% static 'images/IC/logos/Artboard 16.webp' %} "
+            alt=""
+            class="event-logo"
+          />
+          <img
+            src="{% static 'images/IC/logos/Artboard 17.webp' %} "
+            alt=""
+            class="event-logo"
+          />
+          <img
+            src="{% static 'images/IC/logos/Artboard 18.webp' %}"
+            alt=""
+            class="event-logo"
+          />
+        </div>
+        <div class="swiper mySwiper2">
+          <div class="swiper-wrapper slides-wrapper-container">
+            <div class="swiper-slide">
+              <div class="event-description">
+                <div class="event-content">
+                  <p>
+                    <span>Gala Dinner</span> is The initial hour of the gala
+                    dinner serves as a prelude where esteemed international
+                    partners, including prominent organizations such as DHL
+                    and Microsoft, convene and assemble. This specific
+                    timeframe presents an exceptional occasion to showcase
+                    your work on a grand scale, fostering invaluable B2B
+                    connections.
+                  </p>
+                  <div class="event-analysis">
+                    <div class="event-analysis-group">
+                      <img
+                        src="{% static 'images/IC/icons/icon1.webp' %}"
+                        alt=""
+                        width="100px"
+                        style="width: 65px"
+                      />
+                      <div class="counter-one__count-boxx">
+                        <div>
+                          <h3 id="count1">100</h3>
+                          <span class="counter-one__letter">+</span>
+                        </div>
+                        <p class="counter-one__text">Young people<br>from Egypt </p>
+                      </div>
+                    </div>
+                    <div class="event-analysis-group">
+                      <img
+                        src="{% static 'images/IC/icons/icon1.webp' %}"
+                        alt=""
+                        style="width: 65px"
+                      />
+                      <div class="counter-one__count-boxx">
+                        <div>
+                          <h3 id="count1">500</h3>
+                          <span class="counter-one__letter">+</span>
+                        </div>
+                        <p class="counter-one__text">Young people<br>from 113<br>countries</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="event-image">
+                  <img
+                    src="{% static 'images/IC/fadel.webp' %}"
+                    alt=""
+                    style="object-fit: contain"
+                  />
+                </div>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="event-description">
+                <div class="event-content">
+                  <p>
+                     <span>A Global Cultural Festival</span>, is a vibrant celebration where delegates from 113 countries showcase their unique cultures through booths and exhibitions. Each booth offers a glimpse into a nation's traditions, artistry, and flavors, creating a kaleidoscope of human heritage. Visitors journey through a tapestry of diverse experiences, fostering understanding and appreciation for our shared humanity.
+                  </p>
+                  <div class="event-analysis">
+                    <div class="event-analysis-group">
+                      <img
+                        src="{% static 'images/IC/icons/icon1.webp' %} "
+                        alt=""
+                        width="100px"
+                        style="width: 65px"
+                      />
+                      <div class="counter-one__count-boxx">
+                        <div>
+                          <h3 id="count1">100</h3>
+                          <span class="counter-one__letter">+</span>
+                        </div>
+                        <p class="counter-one__text">Young people<br>from Egypt </p>
+                      </div>
+                    </div>
+                    <div class="event-analysis-group">
+                      <img
+                        src="{% static 'images/IC/icons/icon1.webp' %}"
+                        alt=""
+                        style="width: 65px"
+                      />
+                      <div class="counter-one__count-boxx">
+                        <div>
+                          <h3 id="count1">500</h3>
+                          <span class="counter-one__letter">+</span>
+                        </div>
+                        <p class="counter-one__text">Young people<br>from 113<br>countries</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="event-image">
+                  <img
+                    src="{% static 'images/IC/events/4.GlobalVillage.webp' %} "
+                    alt=""
+                    style="object-fit: contain"
+                  />
+                </div>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="event-description">
+                <div class="event-content">
+                  <p>
+                    <span>PAI elections</span> marks a momentous occasion where passionate delegates, driven by a shared vision for positive change, sharing the excitement to shape the destiny of AIESEC on the global stage. Join us in celebrating this remarkable chapter of leadership, unity, and impact at IC'24.
+                  </p>
+                  <div class="event-analysis">
+                    <div class="event-analysis-group">
+                      <img
+                        src="{% static 'images/IC/icons/icon1.webp' %} "
+                        alt=""
+                        width="100px"
+                        style="width: 65px"
+                      />
+                      <div class="counter-one__count-boxx">
+                        <div>
+                          <h3 id="count1">100</h3>
+                          <span class="counter-one__letter">+</span>
+                        </div>
+                        <p class="counter-one__text">Young people<br>from Egypt </p>
+                      </div>
+                    </div>
+                    <div class="event-analysis-group">
+                      <img
+                        src="{% static 'images/IC/icons/icon1.webp' %} "
+                        alt=""
+                        style="width: 65px"
+                      />
+                      <div class="counter-one__count-boxx">
+                        <div>
+                          <h3 id="count1">500</h3>
+                          <span class="counter-one__letter">+</span>
+                        </div>
+                        <p class="counter-one__text">Young people<br>from 113<br>countries</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="event-image">
+                  <img
+                    src="{% static 'images/IC/events/10.PAIElections.webp' %} "
+                    alt=""
+                    style="object-fit: contain"
+                  />
+                </div>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="event-description">
+                <div class="event-content">
+                  <p>
+                    <span>The World’s Largest Lesson</span> is an initiative of the United Nations aimed at spreading awareness about the Sustainable Development Goals. AIESEC is one of the biggest implementers of the World’s Largest Lesson. Every year, AIESEC delivers the WLL to over 15,000 students globally. At AIESEC International Congress every year, delegates are mobilised across schools in the host city to spread.
+                  </p>
+                  <div class="event-analysis">
+                    <div class="event-analysis-group">
+                      <img
+                        src="{% static 'images/IC/icons/icon1.webp' %} "
+                        alt=""
+                        width="100px"
+                        style="width: 65px"
+                      />
+                      <div class="counter-one__count-boxx">
+                        <div>
+                          <h3 id="count1">100</h3>
+                          <span class="counter-one__letter">+</span>
+                        </div>
+                        <p class="counter-one__text">Young people<br>from Egypt</p>
+                      </div>
+                    </div>
+                    <div class="event-analysis-group">
+                      <img
+                        src="{% static 'images/IC/icons/icon1.webp' %} "
+                        alt=""
+                        style="width: 65px"
+                      />
+                      <div class="counter-one__count-boxx">
+                        <div>
+                          <h3 id="count1">500</h3>
+                          <span class="counter-one__letter">+</span>
+                        </div>
+                        <p class="counter-one__text">Young people<br>from 113<br>countries</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="event-image">
+                  <img
+                    src="{% static 'images/IC/events/WorldsLargestLesson.webp' %} "
+                    alt=""
+                    style="object-fit: contain"
+                  />
+                </div>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="event-description">
+                <div class="event-content">
+                  <p>
+                    <span>IC Partners and exclusive guests,</span> This is a celebration of the success AIESEC achieves each year due to the support of our partners and experience followed by the most exquisite dining experience they’ve ever had.
+                  </p>
+                  <div class="event-analysis">
+                    <div class="event-analysis-group">
+                      <img
+                        src="{% static 'images/IC/icons/icon1.webp' %}"
+                        alt=""
+                        width="100px"
+                        style="width: 65px"
+                      />
+                      <div class="counter-one__count-boxx">
+                        <div>
+                          <h3 id="count1">100</h3>
+                          <span class="counter-one__letter">+</span>
+                        </div>
+                        <p class="counter-one__text">Young people<br>from Egypt </p>
+                      </div>
+                    </div>
+                    <div class="event-analysis-group">
+                      <img
+                        src="{% static 'images/IC/icons/icon1.webp' %} "
+                        alt=""
+                        style="width: 65px"
+                      />
+                      <div class="counter-one__count-boxx">
+                        <div>
+                          <h3 id="count1">500</h3>
+                          <span class="counter-one__letter">+</span>
+                        </div>
+                        <p class="counter-one__text">Young people<br>from 113<br>countries</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="event-image">
+                  <img
+                    src="{% static 'images/IC/events/11global-alumni-conference.webp' %} "
+                    alt=""
+                    style="object-fit: contain"
+                  />
+                </div>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="event-description">
+                <div class="event-content">
+                  <p>
+                    <span>Egyptian Night</span> It’s traditional party within the framework of AIESEC International Congress dedicated to the country hosting the Congress. For more than 1000 representatives of the youth & business from 113 countries of the world we showcased the rich history and culture of Egypt.
+                  </p>
+                  <div class="event-analysis">
+                    <div class="event-analysis-group">
+                      <img
+                        src="{% static 'images/IC/icons/icon1.webp' %} "
+                        alt=""
+                        width="100px"
+                        style="width: 65px"
+                      />
+                      <div class="counter-one__count-boxx">
+                        <div>
+                          <h3 id="count1">100</h3>
+                          <span class="counter-one__letter">+</span>
+                        </div>
+                        <p class="counter-one__text">Young people<br>from Egypt</p>
+                      </div>
+                    </div>
+                    <div class="event-analysis-group">
+                      <img
+                        src="{% static 'images/IC/icons/icon1.webp' %} "
+                        alt=""
+                        style="width: 65px"
+                      />
+                      <div class="counter-one__count-boxx">
+                        <div>
+                          <h3 id="count1">500</h3>
+                          <span class="counter-one__letter">+</span>
+                        </div>
+                        <p class="counter-one__text">Young people<br>from 113<br>countries</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="event-image">
+                  <img
+                    src="{% static 'images/IC/events/2.CulturalNight.webp' %} "
+                    alt=""
+                    style="object-fit: contain"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-button-next"></div>
+          <div class="swiper-button-prev"></div>
+        </div>
+      </div>
+    </section>
+  </div>
+  <div class="background-pattern">
+    <section class="game" data-aos="fade-up" data-aos-duration="3000">
+      <div class="container">
+        <h2>See Your Name in Hieroglyphic</h2>
+        <label for="singleField" class="heiro-label">Enter your name:</label><br>
+        <input type="text" id="singleField" name="singleField"><br><br>
+        <div id="display"></div>
+        <p id="name-display"></p>
+      </div>
+    </section>
+  </div>
+  <section class="test-images">
+    <div class="swiper mySwiper">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">
+          <img
+            src="{% static 'images/IC/wetransfer_asset-15-png_2024-01-14_1913/2.webp' %}"
+          />
+        </div>
+        <div class="swiper-slide">
+          <img
+            src="{% static 'images/IC/wetransfer_asset-15-png_2024-01-14_1913/3.webp' %} "
+          />
+        </div>
+        <div class="swiper-slide">
+          <img
+            src="{% static 'images/IC/wetransfer_asset-15-png_2024-01-14_1913/4.webp' %} "
+          />
+        </div>
+        <div class="swiper-slide">
+          <img
+            src="{% static 'images/IC/wetransfer_asset-15-png_2024-01-14_1913/5.webp' %} "
+          />
+        </div>
+        <div class="swiper-slide">
+          <img
+            src="{% static 'images/IC/wetransfer_asset-15-png_2024-01-14_1913/6.webp' %} "
+          />
+        </div>
+        <div class="swiper-slide">
+          <img
+            src="{% static 'images/IC/wetransfer_asset-15-png_2024-01-14_1913/7.webp' %} "
+          />
+        </div>
+        <div class="swiper-slide">
+          <img
+            src="{% static 'images/IC/wetransfer_asset-15-png_2024-01-14_1913/8.webp' %} "
+          />
+        </div>
+        <div class="swiper-slide">
+          <img
+            src="{% static 'images/IC/wetransfer_asset-15-png_2024-01-14_1913/9.webp' %} "
+          />
+        </div>
+        <div class="swiper-slide">
+          <img
+            src="{% static 'images/IC/wetransfer_asset-15-png_2024-01-14_1913/10.webp' %} "
+          />
+        </div>
+        <div class="swiper-slide">
+          <img
+            src="{% static 'images/IC/wetransfer_asset-15-png_2024-01-14_1913/11.webp' %} "
+          />
+        </div>
+        <div class="swiper-slide">
+          <img
+            src="{% static 'images/IC/wetransfer_asset-15-png_2024-01-14_1913/12.webp' %} "
+          />
+        </div>
+        <div class="swiper-slide">
+          <img
+            src="{% static 'images/IC/wetransfer_asset-15-png_2024-01-14_1913/13.webp' %} "
+          />
+        </div>
+        <div class="swiper-slide">
+          <img
+            src="{% static 'images/IC/wetransfer_asset-15-png_2024-01-14_1913/14.webp' %} "
+          />
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+<img
+  src="{% static 'images/IC/footer_pattern.webp' %}"
+  alt=""
+  class="footer-pattern"
+/>
+<script>
+  const inputField = document.getElementById('singleField');
+  const displayDiv = document.getElementById('display');
+  const displayNameDiv = document.getElementById('name-display');
+  const alphabet = {
+    "a": "{% static 'images/IC/heiroglyphics/a.png' %}",
+    "b": "{% static 'images/IC/heiroglyphics/b.png' %}",
+    "c": "{% static 'images/IC/heiroglyphics/c.png' %}",
+    "d": "{% static 'images/IC/heiroglyphics/d.png' %}",
+    "e": "{% static 'images/IC/heiroglyphics/e.png' %}",
+    "f": "{% static 'images/IC/heiroglyphics/f.png' %}",
+    "g": "{% static 'images/IC/heiroglyphics/g.png' %}",
+    "h": "{% static 'images/IC/heiroglyphics/h.png' %}",
+    "i": "{% static 'images/IC/heiroglyphics/i.png' %}",
+    "j": "{% static 'images/IC/heiroglyphics/j.png' %}",
+    "k": "{% static 'images/IC/heiroglyphics/k.png' %}",
+    "l": "{% static 'images/IC/heiroglyphics/l.png' %}",
+    "m": "{% static 'images/IC/heiroglyphics/m.png' %}",
+    "n": "{% static 'images/IC/heiroglyphics/n.png' %}",
+    "o": "{% static 'images/IC/heiroglyphics/o.png' %}",
+    "p": "{% static 'images/IC/heiroglyphics/p.png' %}",
+    "q": "{% static 'images/IC/heiroglyphics/q.png' %}",
+    "r": "{% static 'images/IC/heiroglyphics/r.png' %}",
+    "s": "{% static 'images/IC/heiroglyphics/s.png' %}",
+    "t": "{% static 'images/IC/heiroglyphics/t.png' %}",
+    "u": "{% static 'images/IC/heiroglyphics/u.png' %}",
+    "v": "{% static 'images/IC/heiroglyphics/v.png' %}",
+    "w": "{% static 'images/IC/heiroglyphics/w.png' %}",
+    "x": "{% static 'images/IC/heiroglyphics/x.png' %}",
+    "y": "{% static 'images/IC/heiroglyphics/y.png' %}",
+    "z": "{% static 'images/IC/heiroglyphics/z.png' %}",
+    "ch": "{% static 'images/IC/heiroglyphics/ch.png' %}",
+    "sh": "{% static 'images/IC/heiroglyphics/sh.png' %}",
+  }
+  inputField.addEventListener('input', function(event) {
+     const inputValue = event.target.value;
+      let imageDiv = '';
+      for (let i = 0; i < inputValue.length; i++) {
+        let char = inputValue[i].toLowerCase();
+        if(i + 1 < inputValue.length && inputValue[i + 1].toLowerCase() == 'h'){
+          if(char == 'c'){char = 'ch';i++}
+          else if(char == 's'){char = 'sh';i++}
+        }
+        if(char == ' ')continue;
+        let imageUrl = alphabet[char];
+        console.log(imageUrl)
+        imageDiv += `<img src="${imageUrl}" />`;
+      }
+      displayDiv.innerHTML = imageDiv;
+      displayNameDiv.innerHTML = inputValue;
+  });
+</script>
+<script>
+  function Play() {
+  var video = document.getElementById("video");
+  var mp4 = document.getElementById("mp4");
+  mp4.src = "{% static 'images/IC/V7 Final-1.m4v' %}";
+  var butt = document.getElementById("myButton");
+  butt.style.display = "none";
+  video.controls = true;
+  video.load();
+  video.play();
+}
+
+</script>
+<script src="{% static 'vendors/gsap/gsap.min.js' %}"></script>
+<script>
+  const parallax_el = document.querySelectorAll(".parallax");
+
+    let xValue = 0, yValue = 0;
+    function update(){
+      parallax_el.forEach(el => {
+        let speedx = el.dataset.speedx;
+        let speedy = el.dataset.speedy;
+        el.style.transform = `translateX(calc(-50% + ${-xValue * speedx}px)) translateY(calc(-50% + ${yValue * speedy}px))`;
+      })
+    }
+
+    update();
+    if(window.screen.width > 767){
+        window.addEventListener("mousemove", (e) => {
+          if(timeline1.isActive() || timeline2.isActive() ||timeline3.isActive() ||timeline4.isActive()){return}
+
+          xValue = e.clientX - window.innerWidth / 2;
+          yValue = e.clientY - window.innerHeight / 2;
+
+          update();
+      })
+       // GSAP Animation
+      let timeline1 = gsap.timeline();
+      let timeline2 = gsap.timeline();
+      let timeline3 = gsap.timeline();
+      let timeline4 = gsap.timeline();
+      let timeline5 = gsap.timeline();
+      let timeline6 = gsap.timeline();
+
+
+      timeline1.from(".text", {
+        top: `90%`,
+        duration: 2,
+      })
+      timeline6.from(".text-igv", {
+        top: `90%`,
+        duration: 2,
+      })
+
+      timeline2.from(".layer2", {
+        top: `70%`,
+        duration: 1,
+      })
+      timeline3.from(".layer1", {
+        top: `60%`,
+        duration: 1,
+      })
+      timeline4.from(".bg-img", {
+        top: `100%`,
+        duration: 1,
+      })
+      timeline5.from(".hide", {
+        opacity: 0,
+        duration: 1.5,
+      }, "2")
+    }
+
+    if(window.screen.width <= 767){
+      const text = document.querySelector('.text');
+      window.addEventListener('scroll', () => {
+          parallax_el.forEach(el => {
+            let speedy = el.dataset.speedy;
+            yValue = -window.scrollY - window.innerHeight / 2;
+            update();
+          })
+      })
+    }
+
+</script>
+ <script src="{% static 'vendors/swiperjs/swiper-bundle.min.js' %}"></script>
+    <script>
+      var swiper = new Swiper(".mySwiper2", {
+        loop: true,
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+        },
+      });
+      const swiper1 = new Swiper(".mySwiper", {
+        effect: "slide",
+        speed: 900,
+        slidesPerView: 4,
+        spaceBetween: 100,
+        simulateTouch: true,
+        autoplay: {
+          delay: 400,
+          stopOnLastSlide: false,
+          disableOnInteraction: false,
+        },
+        pagination: {
+          el: ".carousel-gallery .swiper-pagination",
+          clickable: true,
+        },
+        breakpoints: {
+          280: {
+            slidesPerView: 1,
+            spaceBetween: 1,
+          },
+          // when window width is <= 320px
+
+          320: {
+            slidesPerView: 2,
+            spaceBetween: 70,
+          },
+          // when window width is <= 480px
+          450: {
+            slidesPerView: 3,
+            spaceBetween: 70,
+          },
+          // when window width is <= 640px
+          768: {
+            slidesPerView: 3,
+            spaceBetween: 20,
+          },
+          900: {
+            slidesPerView: 5,
+            spaceBetween: 250,
+          },
+        },
+      }); 
+    </script>
+    <script>
+      if(window.screen.width <= 767){
+        // Function to check if the user has scrolled to the bottom of the page
+        function isBottomOfPage() {
+          return window.innerHeight + window.scrollY >= document.body.offsetHeight;
+        }
+
+        // Function to hide the registration button when reaching the bottom of the page
+      function hideRegistrationButton() {
+        var registrationButton = document.getElementById('reg-now-btn');
+        if (isBottomOfPage()) {
+          registrationButton.classList.remove('fade-in');
+          registrationButton.style.display = 'none';
+        } else {
+          registrationButton.style.display = 'block';
+          setTimeout(function() {
+            registrationButton.classList.add('fade-in');
+          }, 100); // Delay the addition of the class for smoother transition
+        }
+      }
+
+        // Check if the user has reached the bottom of the page on scroll
+        window.addEventListener('scroll', function() {
+          hideRegistrationButton();
+        });
+
+        // Check if the user has reached the bottom of the page on page load
+        document.addEventListener('DOMContentLoaded', function() {
+          hideRegistrationButton();
+        });
+      }
+</script>
+
+{% endblock content %}
